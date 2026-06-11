@@ -1,0 +1,148 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Verdana,sans-serif;
+    min-height:100vh;
+    overflow:hidden;
+    background:url("assets/bg.jpg");
+    background-size:cover;
+    background-position:center;
+    color:white;
+}
+
+.game-window{
+    width:min(900px,90%);
+    margin:40px auto;
+    background:rgba(0,0,0,.65);
+    border:4px solid #fff;
+    border-radius:20px;
+    padding:30px;
+    text-align:center;
+}
+
+.title{
+    font-size:32px;
+    margin-bottom:20px;
+}
+
+.message{
+    margin:15px 0 30px;
+    font-size:20px;
+}
+
+.characters{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:40px;
+}
+
+.avatar{
+    font-size:60px;
+}
+
+.heart{
+    font-size:40px;
+    animation:pulse 1s infinite;
+}
+
+@keyframes pulse{
+    50%{
+        transform:scale(1.2);
+    }
+}
+
+.slimes{
+    margin:30px 0;
+}
+
+.slimes img{
+    width:90px;
+    margin:0 15px;
+    animation:bounce 1s infinite alternate;
+}
+
+@keyframes bounce{
+    from{
+        transform:translateY(0);
+    }
+    to{
+        transform:translateY(-20px);
+    }
+}
+
+.quest-box{
+    background:rgba(255,255,255,.15);
+    padding:20px;
+    border-radius:15px;
+    margin:20px 0;
+}
+
+.question{
+    margin-top:30px;
+}
+
+button{
+    border:none;
+    padding:15px 30px;
+    border-radius:30px;
+    cursor:pointer;
+    margin:10px;
+    font-size:18px;
+}
+
+#yesBtn{
+    background:#ff4da6;
+    color:white;
+}
+
+#noBtn{
+    background:#777;
+    color:white;
+}
+
+#result{
+    margin-top:30px;
+    font-size:28px;
+}
+
+.leaf{
+    position:fixed;
+    top:-50px;
+    font-size:30px;
+    pointer-events:none;
+    animation:fall linear forwards;
+}
+
+@keyframes fall{
+    to{
+        transform:
+        translateY(110vh)
+        rotate(360deg);
+    }
+}
+
+.floating-heart{
+    position:fixed;
+    font-size:40px;
+    animation:floatUp 2s forwards;
+}
+
+@keyframes floatUp{
+    to{
+        opacity:0;
+        transform:
+        translateY(-250px)
+        scale(1.5);
+    }
+}
+
+.music-panel{
+    position:fixed;
+    top:10px;
+    right:10px;
+}
