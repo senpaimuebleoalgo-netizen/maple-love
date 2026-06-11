@@ -4,8 +4,167 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Crissy ❤️ ¿Party este fin de semana?</title>
-
-<link rel="stylesheet" href="style.css">
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Verdana, sans-serif;
+    min-height: 100vh;
+    overflow: hidden;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    background-attachment: fixed;
+  }
+  
+  .game-window {
+    width: min(900px, 90%);
+    margin: 40px auto;
+    background: rgba(0, 0, 0, 0.65);
+    border: 4px solid #fff;
+    border-radius: 20px;
+    padding: 30px;
+    text-align: center;
+  }
+  
+  .title {
+    font-size: 32px;
+    margin-bottom: 20px;
+  }
+  
+  .message {
+    margin: 15px 0 30px;
+    font-size: 20px;
+  }
+  
+  .characters {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    margin: 30px 0;
+  }
+  
+  .avatar {
+    font-size: 60px;
+  }
+  
+  .heart {
+    font-size: 40px;
+    animation: pulse 1s infinite;
+  }
+  
+  @keyframes pulse {
+    50% {
+      transform: scale(1.2);
+    }
+  }
+  
+  .slimes {
+    margin: 30px 0;
+    min-height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .slimes img {
+    width: 90px;
+    height: 90px;
+    object-fit: contain;
+    animation: bounce 1s infinite alternate;
+  }
+  
+  @keyframes bounce {
+    from {
+      transform: translateY(0);
+    }
+    to {
+      transform: translateY(-20px);
+    }
+  }
+  
+  .quest-box {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 20px;
+    border-radius: 15px;
+    margin: 20px 0;
+  }
+  
+  .question {
+    margin-top: 30px;
+  }
+  
+  button {
+    border: none;
+    padding: 15px 30px;
+    border-radius: 30px;
+    cursor: pointer;
+    margin: 10px;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  #yesBtn {
+    background: #ff4da6;
+    color: white;
+  }
+  
+  #noBtn {
+    background: #777;
+    color: white;
+  }
+  
+  #result {
+    margin-top: 30px;
+    font-size: 28px;
+  }
+  
+  .leaf {
+    position: fixed;
+    font-size: 30px;
+    pointer-events: none;
+    animation: fall linear forwards;
+  }
+  
+  @keyframes fall {
+    to {
+      transform: translateY(100vh) rotate(360deg);
+      opacity: 0;
+    }
+  }
+  
+  .floating-heart {
+    position: fixed;
+    font-size: 40px;
+    animation: floatUp 2s forwards;
+  }
+  
+  @keyframes floatUp {
+    to {
+      opacity: 0;
+      transform: translateY(-250px) scale(1.5);
+    }
+  }
+  
+  .music-panel {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 1000;
+  }
+  
+  .music-panel button {
+    background: rgba(255, 255, 255, 0.9);
+    color: #333;
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+</style>
 </head>
 
 <body>
@@ -13,91 +172,162 @@
 <div id="leaf-container"></div>
 <div id="heart-container"></div>
 
-<audio id="bgm" loop>
-    <source src="https://raw.githubusercontent.com/senpaimuebleoalgo-netizen/maple-love/main/ellinia.mp3" type="audio/mpeg">
+<audio id="bgm" loop crossorigin="anonymous">
+  <source src="https://raw.githubusercontent.com/senpaimuebleoalgo-netizen/maple-love/main/ellinia.mp3" type="audio/mpeg">
 </audio>
 
 <div class="music-panel">
-    <button id="musicBtn">🎵 Reproducir Música</button>
+  <button id="musicBtn">🎵 Reproducir Música</button>
 </div>
 
 <div class="game-window">
 
-    <div class="title">
-        🍁 MapleStory Weekend 🍁
+  <div class="title">
+    🍁 MapleStory Weekend 🍁
+  </div>
+
+  <h1>Hola Crissy ❤️</h1>
+
+  <p class="message">
+    Cholo quiere invitarte a una aventura especial.
+  </p>
+
+  <div class="characters">
+    <div class="character">
+      <div class="avatar">🗡️</div>
+      <h3>Cholo</h3>
+      <span>Lv.200 Night Lord</span>
     </div>
 
-    <h1>Hola Crissy ❤️</h1>
+    <div class="heart">❤️</div>
 
-    <p class="message">
-        Cholo quiere invitarte a una aventura especial.
+    <div class="character">
+      <div class="avatar">✨</div>
+      <h3>Crissy</h3>
+      <span>Lv.200 Bishop</span>
+    </div>
+  </div>
+
+  <div class="slimes">
+    <span style="font-size: 60px; animation: bounce 1s infinite alternate;">🟢</span>
+    <span style="font-size: 60px; animation: bounce 1s infinite alternate;">🟢</span>
+    <span style="font-size: 60px; animation: bounce 1s infinite alternate;">🟢</span>
+  </div>
+
+  <div class="quest-box">
+    <h2>Misión Especial</h2>
+    <p>
+      Derrotar monstruos juntos<br>
+      Conseguir loot épico<br>
+      Subir niveles<br>
+      Reírnos toda la tarde ❤️
     </p>
+  </div>
 
-    <div class="characters">
+  <div class="countdown">
+    <h3>⏳ Tiempo para nuestra aventura</h3>
+    <div id="timer"></div>
+  </div>
 
-        <div class="character">
-            <div class="avatar">🗡️</div>
-            <h3>Cholo</h3>
-            <span>Lv.200 Night Lord</span>
-        </div>
+  <div class="question">
+    <h2>
+      ¿Quieres ser mi compañera de party este fin de semana?
+    </h2>
 
-        <div class="heart">❤️</div>
+    <button id="yesBtn">
+      Sí ❤️
+    </button>
 
-        <div class="character">
-            <div class="avatar">✨</div>
-            <h3>Crissy</h3>
-            <span>Lv.200 Bishop</span>
-        </div>
+    <button id="noBtn">
+      No 😈
+    </button>
+  </div>
 
-    </div>
-
-    <div class="slimes">
-        <img src="https://raw.githubusercontent.com/senpaimuebleoalgo-netizen/maple-love/main/slime.png" alt="slime">
-        <img src="https://raw.githubusercontent.com/senpaimuebleoalgo-netizen/maple-love/main/slime.png" alt="slime">
-        <img src="https://raw.githubusercontent.com/senpaimuebleoalgo-netizen/maple-love/main/slime.png" alt="slime">
-    </div>
-
-    <div class="quest-box">
-
-        <h2>Misión Especial</h2>
-
-        <p>
-            Derrotar monstruos juntos<br>
-            Conseguir loot épico<br>
-            Subir niveles<br>
-            Reírnos toda la tarde ❤️
-        </p>
-
-    </div>
-
-    <div class="countdown">
-
-        <h3>⏳ Tiempo para nuestra aventura</h3>
-        <div id="timer"></div>
-
-    </div>
-
-    <div class="question">
-
-        <h2>
-            ¿Quieres ser mi compañera de party este fin de semana?
-        </h2>
-
-        <button id="yesBtn">
-            Sí ❤️
-        </button>
-
-        <button id="noBtn">
-            No 😈
-        </button>
-
-    </div>
-
-    <div id="result"></div>
+  <div id="result"></div>
 
 </div>
 
-<script src="script.js"></script>
+<script>
+  const bgm = document.getElementById("bgm");
+  const musicBtn = document.getElementById("musicBtn");
+  
+  musicBtn.addEventListener("click", () => {
+    if (bgm.paused) {
+      bgm.play().catch(err => console.log("Audio play failed:", err));
+      musicBtn.innerText = "🎵 Música Reproduciendo";
+    } else {
+      bgm.pause();
+      musicBtn.innerText = "🎵 Reproducir Música";
+    }
+  });
+  
+  const noBtn = document.getElementById("noBtn");
+  
+  noBtn.addEventListener("mouseover", () => {
+    noBtn.style.position = "fixed";
+    noBtn.style.left = Math.random() * (window.innerWidth - 150) + "px";
+    noBtn.style.top = Math.random() * (window.innerHeight - 100) + "px";
+  });
+  
+  document.getElementById("yesBtn").addEventListener("click", () => {
+    document.getElementById("result").innerHTML = `
+      <h2>🎉 PARTY CREADA 🎉</h2>
+      <p>Crissy aceptó la invitación ❤️</p>
+      <p>Cholo y Crissy comenzarán una aventura épica este fin de semana 🍁</p>
+    `;
+    createHearts();
+  });
+  
+  function createLeaf() {
+    const leaf = document.createElement("div");
+    leaf.className = "leaf";
+    leaf.innerHTML = "🍁";
+    leaf.style.left = Math.random() * 100 + "vw";
+    leaf.style.top = "-50px";
+    leaf.style.animationDuration = Math.random() * 4 + 5 + "s";
+    document.body.appendChild(leaf);
+    
+    setTimeout(() => {
+      leaf.remove();
+    }, 9000);
+  }
+  
+  setInterval(createLeaf, 300);
+  
+  function createHearts() {
+    for (let i = 0; i < 50; i++) {
+      setTimeout(() => {
+        const heart = document.createElement("div");
+        heart.className = "floating-heart";
+        heart.innerHTML = "❤️";
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.top = Math.random() * 100 + "vh";
+        document.body.appendChild(heart);
+        
+        setTimeout(() => {
+          heart.remove();
+        }, 2000);
+      }, i * 50);
+    }
+  }
+  
+  const timer = document.getElementById("timer");
+  const target = new Date();
+  target.setDate(target.getDate() + 2);
+  
+  function updateCountdown() {
+    const now = new Date();
+    const diff = target - now;
+    const days = Math.floor(diff / 86400000);
+    const hours = Math.floor((diff % 86400000) / 3600000);
+    const mins = Math.floor((diff % 3600000) / 60000);
+    
+    timer.innerHTML = `${days} días ${hours} horas ${mins} min`;
+  }
+  
+  setInterval(updateCountdown, 1000);
+  updateCountdown();
+</script>
 
 </body>
 </html>
